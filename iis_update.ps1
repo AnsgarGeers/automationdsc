@@ -25,18 +25,11 @@ Configuration WebServerConfig
       Name = "Web-Mgmt-Console"
     }
 
-    xFirewall WebFirewallRule
+    xFirewall Firewall
     {
-      Direction = "Inbound"
-      Name = "Web-Server-TCP-In"
-      DisplayName = "Web Server (TCP-In)"
-      Description = "IIS allow incoming web site traffic."
-      DisplayGroup = "IIS Incoming Traffic"
-      State = "Enabled"
-      Access = "Allow"
-      Protocol = "TCP"
-      LocalPort = "80"
-      Ensure = "Present"
+        Name                  = "IIS-WebServerRole-HTTP-In-TCP"
+        Ensure                = "Present"
+        Enabled               = "True"
     }
 
     File WebPage {
